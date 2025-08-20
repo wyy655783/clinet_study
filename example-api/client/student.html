@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>学生列表</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: "微软雅黑", Arial, sans-serif;
+            background: #fff;
+        }
+        h2 {
+            font-family: "楷体", "KaiTi", cursive;
+            font-size: 2em;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            letter-spacing: 8px;
+        }
+        .student-list {
+            margin: 0 auto;
+            width: 60%;
+            min-width: 400px;
+            border: 1px solid #f0f0f0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .student-header, .student-row {
+            display: flex;
+            background: #eaeaea;
+            font-family: "楷体", "KaiTi", cursive;
+            font-size: 1.2em;
+            font-weight: normal;
+            letter-spacing: 4px;
+            padding: 12px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .student-header {
+            background: #eaeaea;
+        }
+        .student-row {
+            background: #fff;
+            font-size: 1.1em;
+            font-family: "微软雅黑", Arial, sans-serif;
+        }
+        .student-id, .student-name, .student-gender, .student-age {
+            flex: 1;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h2>学生列表</h2>
+    <div class="student-list">
+        <div class="student-header">
+            <span class="student-id">编号</span>
+            <span class="student-name">姓名</span>
+            <span class="student-sex">性别</span>
+            <span class="student-age">年龄</span>
+        </div>
+        <!-- 学生数据行将由 JS 动态插入 -->
+         <div class="student-row">
+            <span class="student-id">1</span>
+            <span class="student-name">张三</span>
+            <span class="student-sex">男</span>
+            <span class="student-age">18</span>
+         </div>
+    </div>
+   
+</body>
+</html>
