@@ -58,14 +58,90 @@
             <span class="student-age">年龄</span>
         </div>
         <!-- 学生数据行将由 JS 动态插入 -->
-         <div class="student-row">
+         <!-- <div class="student-row">
             <span class="student-id">1</span>
             <span class="student-name">张三</span>
             <span class="student-sex">男</span>
             <span class="student-age">18</span>
-         </div>
+         </div> -->
     </div>
+    <template id="student-template">
+        <div class="student-row">
+            <span class="student-id"></span> 
+            <span class="student-name"></span>
+            <span class="student-sex"></span>
+            <span class="student-age"></span>
+        </div>
+    </template>    
+
    <script>
+    //使用fetch 异步请求处理
+        fetch(`data.json`)
+        .then(res =>res.json())
+        .then(students =>{
+            students.forEach(stu => {
+                let template = document.getElementById('student-template').content.cloneNode(true);
+                template.querySelector('.student-id').textContent = stu.id;
+                template.querySelector('.student-name').textContent = stu.name;
+                template.querySelector('.student-sex').textContent = stu.sex
+                template.querySelector('.student-age').textContent = stu.age;
+                document.querySelector('.student-list').appendChild(template);
+            });
+        })
+   
+       
+
+    //使用fetch 同步请求处理
+    // async function findStudents(){
+    //     const resp= await fetch(`data.json`)
+    //     const students=await resp.json();
+    //     students.forEach(stu => {
+    //         let template = document.getElementById('student-template').content.cloneNode(true);
+    //         template.querySelector('.student-id').textContent = stu.id;
+    //         template.querySelector('.student-name').textContent = stu.name;
+    //         template.querySelector('.student-sex').textContent = stu.sex
+    //         template.querySelector('.student-age').textContent = stu.age;
+    //         document.querySelector('.student-list').appendChild(template);
+    //     });
+    // }
+    // findStudents();
+
+    // let students = [
+    //     { id: 1, name:"张三",sex:"男", age: 18 },
+    //     { id: 2, name:"李四",sex:"女", age: 19 },
+    //     { id: 3, name:"王五",sex:"男", age: 20 },
+    //     { id: 4, name:"赵强",sex:"男", age: 21 },
+    //     { id: 5, name:"钱六",sex:"女", age: 22 }                                 
+    // ];     
+    //http://localhost:8080/getUsers
+    //[{"id":1,"name":"张三","sex":"男","age":20}]
+    // fetch('http://localhost:8080/getUsers')
+    //     .then(response => response.json())
+    //     .then(data => {
+    //         data.forEach(stu => {
+    //             let template = document.getElementById('student-template').content.cloneNode(true);
+    //             template.querySelector('.student-id').textContent = stu.id;
+    //             template.querySelector('.student-name').textContent = stu.name;
+    //             template.querySelector('.student-sex').textContent = stu.sex;
+    //             template.querySelector('.student-age').textContent = stu.age;
+    //             document.querySelector('.student-list').appendChild(template);
+    //         });
+    //     });
+    
+
+    // students.forEach(stu1 => {
+    //     let item=document.createElement('div');
+    //     item.className = 'student-row';
+    //     item.innerHTML = `
+    //         <span class="student-id">${stu1.id}</span>
+    //         <span class="student-name">${stu1.name}</span>
+    //         <span class="student-sex">${stu1.sex}</span>
+    //         <span class="student-age">${stu1.age}</span>`;
+    //     document.querySelector('.student-list').appendChild(item);    
+    // });
+
+
+
         //  document.querySelector('.student-list').innerHTML += `
         //     <div class="student-row">
         //         <span class="student-id">2</span>
@@ -76,7 +152,7 @@
         //         <span class="student-name">王五</span> <span class="student-sex">男</span>
         //         <span class="student-age">20</span> `;
         //         document.querySelector('.student-list').textContent
-         document.querySelector('.student-row').innerHTML +=` `;
+        //  document.querySelector('.student-row').textContent =` `;
    </script>
 </body>
 </html>
