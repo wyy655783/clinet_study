@@ -9,10 +9,9 @@
   "author": "",
   "license": "ISC",
   "description": "",
-
   "type": "module",
-
   "devDependencies": {
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "http-proxy-middleware": "^3.0.5"
   }
 }

@@ -76,7 +76,7 @@
 
    <script>
     //使用fetch 异步请求处理
-        fetch(`data.json`)
+        fetch(`/api/getUsers`)
         .then(res =>res.json())
         .then(students =>{
             students.forEach(stu => {
