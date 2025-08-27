@@ -1,7 +1,7 @@
 import Vue from 'vue';
 //import App from './App.vue'
 //import exp from './views/Exp1View.vue'
-import exp2 from './views/Exp4View.vue';
+import exp2 from './views/Exp6View.vue';
 import router from './router';
 import store from './store';
 
