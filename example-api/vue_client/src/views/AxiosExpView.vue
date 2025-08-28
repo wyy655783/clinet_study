@@ -35,7 +35,7 @@ export default {
       //   }
       // });
       //44444444    格式urlencoded
-    
+
       // const params = new URLSearchParams();
       // params.append('name', '中文');
       // params.append('age', 18);
@@ -43,7 +43,7 @@ export default {
       // const resp = await axios.post('/api/p4',params);
 
       //55555555    multipart格式
-    
+
       // const formData = new FormData();
       // formData.append('name', '中&&文');
       // formData.append('age', 18);
@@ -54,14 +54,26 @@ export default {
 
       //6666666  响应数据类型
 
-      const resp = await axios.post('/api/p5toJson', {
-        name: '中文',
-        age: 18,  
-        id: 1001,
-        // sex: '男'
-      });
+      // const resp = await axios.post('/api/p5toJson', {
+      //   name: '中文',
+      //   age: 18,
+      //   id: 1001,
+      //   // sex: '男'
+      // });
 
-      console.log(resp);
+      const _axios = axios.create({
+        baseURL: 'http://localhost:8080',
+        withCredentials: true,
+      });
+      // const resp = await _axios.post('/p5toJson', {
+      //   name: '中文',
+      //   age: 18,
+      //   id: 1001,
+      //   // sex: '男'
+      // });
+      await _axios.post('/a6set', {});
+      await _axios.post('/a6get', {});
+      //console.log(resp);
     },
   },
 };
